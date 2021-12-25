@@ -1,10 +1,9 @@
 version: '3'
 
 services:
-  # MySQL
   db:
     image: mysql:5.7
-    container_name: mysql_host
+    container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_database
