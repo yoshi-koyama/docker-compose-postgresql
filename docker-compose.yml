@@ -2,18 +2,14 @@ version: '3'
 
 services:
   db:
-    image: mysql:5.7
+    image: postgres:latest
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test_database
-      MYSQL_USER: docker
-      MYSQL_PASSWORD: docker
-      TZ: 'Asia/Tokyo'
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    volumes:
-      - ./db/data:/var/lib/mysql
-      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./db/sql:/docker-entrypoint-initdb.d
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test_database
+      TZ: "Asia/Tokyo"
     ports:
-      - 3306:3306
+      - 5433:5432
+    volumes:
+      - ./db/sql:/docker-entrypoint-initdb.d

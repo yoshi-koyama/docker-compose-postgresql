@@ -1,1 +1,1 @@
-insert into test_table (name) values ("yoshihito koyama");
+insert into mybook (id, name) values (1, 'The Lord of the Rings');

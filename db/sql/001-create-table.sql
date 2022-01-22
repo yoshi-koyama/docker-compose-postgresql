@@ -1,12 +1,9 @@
 ---- drop ----
-DROP TABLE IF EXISTS `test_table`;
+drop table if exists "mybook";
+
 
 ---- create ----
-create table IF not exists `test_table`
-(
- `id`               INT(20) AUTO_INCREMENT,
- `name`             VARCHAR(20) NOT NULL,
- `created_at`       Datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
- `updated_at`       Datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY (`id`)
-) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+create table mybook (
+  id integer, 
+  name varchar(255)
+);
